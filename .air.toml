@@ -1,0 +1,29 @@
+# .air.toml
+
+root = "."
+tmp_dir = "tmp"
+
+[build]
+cmd = "go build -o ./tmp/main ./cmd/main.go"
+bin = "tmp/main"
+full_bin = ""
+include_ext = ["go"]
+exclude_dir = ["tmp", "vendor", "node_modules"]
+exclude_file = []
+follow_symlink = true
+delay = 1000
+log = "build-errors.log"
+send_interrupt = true
+kill_delay = 500
+
+[log]
+time = true
+
+[color]
+main = "yellow"
+watcher = "cyan"
+build = "green"
+runner = "magenta"
+
+[debug]
+enable = false
